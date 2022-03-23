@@ -3,7 +3,7 @@ before_action :set_doctor, only:[:update,:show, :destroy]
 
 
 def index
-render json: Doctors.all
+render json: Doctor.all
 end
 #-----------------------SHOW
 def show

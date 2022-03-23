@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import Patients from "./pages/Patients";
 import Doctors from "./pages/Doctors";
 import Appointments from "./pages/Appointments";
+import NewAppointment from "./pages/NewAppointment";
 
 
 const NotFound = ()=>{
@@ -26,6 +27,8 @@ ReactDOM.render(
           <Route index path="/patients" element={<Patients />} />
           <Route index path="/doctors" element={<Doctors />} />
           <Route index path="/appointments" element={<Appointments />} />
+          <Route index path="/appointments/new" element={<NewAppointment />} />
+          
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

@@ -20,6 +20,8 @@ function App() {
           <Link className='link' to="/patients">Patients</Link>
           <Link className='link' to="/doctors">Doctors</Link>
           <Link className='link' to="/appointments">Appointments</Link>
+          <Link className='link' to="/appointments/new">New Appointments</Link>
+          
           
         </nav>
       </nav>

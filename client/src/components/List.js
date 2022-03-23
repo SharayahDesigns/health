@@ -4,6 +4,7 @@ const List = ({list,renderItem}) => {
   const renderList = () => {
    
     if(!renderItem) {
+      
     return <StringifyJSON data={list}/>
     }
       return list.map(renderItem)

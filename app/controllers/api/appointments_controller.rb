@@ -1,9 +1,10 @@
 class Api::AppointmentsController < ApplicationController
-#declare this route in routes.rb
+# declare this route in routes.rb
 def all_connecting
   render json: Appointment.all_connecting
  end
 
+#the index will allow you show certain data
 def index
 render json: Appointment.all 
 end
@@ -19,7 +20,7 @@ end
 
 def update
  appointment = Appointment.find(params[:id])
-if(appointment.update(appointment_params_only_date))
+if(appointment.update(appointment_params))
     render json: appointment
 else 
     render json: {error: appointment.errors.full_messages}, status:422
@@ -28,7 +29,7 @@ end
 
 def show
  appointment = Appointment.find(params[:id])
- render json: Appointment
+ render json: appointment
 end
 
 
@@ -54,8 +55,9 @@ end
 end
 
 def create_with_doc
-  doctor = doctor.find(params[:id])
-  appointment = doctor.appointments.new(appointment_params)
+  doctor = Doctor.find(params[:id])
+ 
+ appointment = doctor.appointments.new(appointment_params)
 if(appointment.save)
 render json: appointment
 else
@@ -71,8 +73,9 @@ private
 def appointment_params
    params.require(:appointment).permit(:date,:patient_id, :doctor_id)
 end
-
-def appointment_params_only_date
-   params.require(:appointment).permit(:date)
-end
+#if you want to use the appointment_params_only_date you will need to put that tag in the show method where it says appointment_params
+#-----------------------------------------------------------------------
+# def appointment_params_only_date
+#    params.require(:appointment).permit(:date)
+# end
 end

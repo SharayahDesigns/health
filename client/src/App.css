@@ -5,12 +5,12 @@ background: rgb(226, 224, 224);
 .link {
 text-decoration: none;
 border: solid #282c34;
-border-radius: 10px;
+border-radius: 8px;
 justify-content: space-between;
 padding: 5px;
-margin: 10px;
+margin: 5px;
 color: white;
-font-size: 17px;
+font-size: 12px;
 font-weight: 20px;
 font-family: monaco;
 text-shadow: 1px 1px 1px black;

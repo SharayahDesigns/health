@@ -10,6 +10,7 @@ post 'patients/:id/appointments', to: "appointments#create_with_pat"
 post 'doctors/:id/appointments', to: "appointments#create_with_doc"
 
 
+
 end
 
 end
