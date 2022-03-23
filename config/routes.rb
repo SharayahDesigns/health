@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+namespace :api do
+  get "all_good", to: "appointments#all_connecting"
+  resources :patients
+  resources :appointments
+  resources :doctors
+
+post 'patients/:id/appointments', to: "appointments#create_with_pat"
+post 'doctors/:id/appointments', to: "appointments#create_with_doc"
+
+
+end
+
 end
